@@ -1,4 +1,5 @@
 package j2woo.week1;
+
 import java.util.*;
 public class 정렬된리스트병합 {
     public static void main(String[] args){
@@ -16,3 +17,4 @@ public class 정렬된리스트병합 {
         return list;
     }
 }
+
