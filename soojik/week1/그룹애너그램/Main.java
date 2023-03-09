@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) throws IOException {
-    // 테스트데이터 입력 받기
+    /* 파일로 테스트데이터 입력 받기
     System.setIn(new FileInputStream("soojik/week1/그룹애너그램/input.txt"));
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -16,15 +16,25 @@ public class Main {
     for (int i = 0; i < 6; i++) {
       input_str[i] = br.readLine();
     }
+     */
 
-    int len = input_str.length;
+    String[] input_str = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+    /*
+      key: 알파벳 순으로 정렬된 단어
+      value: 같은 구성을 가진 단어의 배열
+     */
     HashMap<String, List<String>> map = new HashMap<>();
 
+    int len = input_str.length;
     // input 문자열 배열 순회
     for (int i = 0; i < len; i++) {
       // 각 문자열 정렬
       char[] tmp = input_str[i].toCharArray();
       Arrays.sort(tmp);
+
+      // 현재 문자열을 추가할 list_tmp
+      // 밑에서 이전에 같은 구성의 알파벳의 유무에 따라 다른 값이 들어간다.
       List<String> list_tmp;
 
       // 정렬된 문자열 tmp가 map에 있는 경우
@@ -45,6 +55,8 @@ public class Main {
       map.put(new String(tmp), list_tmp);
     }
 
+    /*
+    처음 코드
     int map_size = map.size();
 
     // 정답 출력할 List 배열
@@ -58,5 +70,15 @@ public class Main {
 
     // 답 출력
     System.out.println(Arrays.toString(answer));
+
+     */
+
+    // map.values 는 Collection<List<String>> 형태로 반환되기 때문에
+    // 이를 상속받는 배열 형태의 ArrayList 로 바꿔준다.
+    ArrayList<List<String>> answer = new ArrayList<>(map.values());
+
+    // 답 출력
+    System.out.println(answer);
+
   }
 }
