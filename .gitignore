@@ -116,3 +116,10 @@ hs_err_pid*
 replay_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all
+/j2woo/.idea/.gitignore
+/j2woo/.idea/checkstyle-idea.xml
+/j2woo/.idea/jpa-buddy.xml
+/j2woo/.idea/misc.xml
+/j2woo/.idea/modules.xml
+/Study-Group-3-Java.iml
+/j2woo/.idea/vcs.xml
