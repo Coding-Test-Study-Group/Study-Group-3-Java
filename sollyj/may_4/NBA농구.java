@@ -56,69 +56,11 @@ public class NBA농구 {
 			for (int i = 0; i < 2; i++) {
 				int m = ans_time[i] / 60;    // 분
 				int s = ans_time[i] % 60;    // 초
-				String minStr;
-				String secStr;
 
-				if (m < 10) {
-					minStr = "0" + m;
-				} else {
-					minStr = String.valueOf(m);
-				}
-
-				if (s < 10) {
-					secStr = "0" + s;
-				} else {
-					secStr = String.valueOf(s);
-				}
-
-				System.out.println(minStr + ":" + secStr);
+				System.out.println(String.format("%02d:%02d", m, s));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getLocalizedMessage());
 		}
 	}
-
-	/*
-	// 1팀 이기고 있던 시간 구하는 함수
-	private static void oneLeadTime(int start_min, int start_sec, int end_min, int end_sec) {
-		// 소요 시간
-		int temp_min = end_min - start_min;
-		int temp_sec = end_sec - start_sec;
-
-		if (temp_sec < 0) {
-			temp_sec += 60;
-			temp_min -= 1;
-		}
-
-		// 소요 시간을 원래 이기고 있던 시간에 더해주기
-		if (sec[0] + temp_sec >= 60) {
-			min[0] = min[0] + (sec[0] + temp_sec) / 60;
-			sec[0] = (sec[0] + temp_sec) % 60;
-		} else {
-			min[0] += temp_min;
-			sec[0] += temp_sec;
-		}
-	}
-
-	// 2팀 이기고 있던 시간 구하는 함수
-	private static void twoLeadTime(int start_min, int start_sec, int end_min, int end_sec) {
-		// 소요 시간
-		int temp_min = end_min - start_min;
-		int temp_sec = end_sec - start_sec;
-
-		if (temp_sec < 0) {
-			temp_sec += 60;
-			temp_min -= 1;
-		}
-
-		// 소요 시간을 원래 이기고 있던 시간에 더해주기
-		if (sec[1] + temp_sec >= 60) {
-			min[1] = min[1] + (sec[1] + temp_sec) / 60;
-			sec[1] = (sec[1] + temp_sec) % 60;
-		} else {
-			min[1] += temp_min;
-			sec[1] += temp_sec;
-		}
-	}
-	 */
 }
