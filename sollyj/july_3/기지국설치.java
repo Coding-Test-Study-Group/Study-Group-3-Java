@@ -32,7 +32,7 @@ public class 기지국설치 {
 			start = s + w + 1;    // start를 갱신해주고 다음 반복문 실행
 		}
 
-		// 왼쪽만 봤으니까 오른쪽이 남아있다면 다음 반복문 실행
+		// 왼쪽만 봤으니까 오른쪽이 남아있다면 다음 조건문 실행
 		if (stations[stations.length - 1] + w + 1 <= n) {
 			end = n;
 
